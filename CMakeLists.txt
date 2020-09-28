@@ -1,0 +1,15 @@
+cmake_minimum_required(VERSION 3.5.1)
+project(Rtk_Box VERSION "1.0.0")
+#set(PROJECT_SOURCE_DIR /home/dogu/ArdicLabs/Rtk_Box)
+message("Project source directory: ${PROJECT_SOURCE_DIR}")
+include_directories("${PROJECT_SOURCE_DIR}")
+include_directories("${PROJECT_SOURCE_DIR}/include")
+include_directories("${PROJECT_SOURCE_DIR}/source")
+#add_subdirectory(./include)
+#add_subdirectory(./source)
+file(GLOB_RECURSE HDR ${PROJECT_SOURCE_DIR}/include/*.h)
+file(GLOB_RECURSE SRC ${PROJECT_SOURCE_DIR}/source/*.c)
+message("${PROJECT_BINARY_BIN}")
+add_executable(Rtk_Box ${SRC} ${HDR})
+
+
